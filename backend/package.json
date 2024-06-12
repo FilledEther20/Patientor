@@ -10,7 +10,6 @@
     "lint": "eslint --ext .ts .",
     "start": "node build/index.js"
   },
-  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
