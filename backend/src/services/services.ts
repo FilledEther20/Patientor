@@ -1,5 +1,5 @@
-import patientData from "../../../data/patient";
-import diagnosesData from "../../../data/diagnoses";
+import patientData from "../data/patient";
+import diagnosesData from "../data/diagnoses";
 import { Diagnoses, Patient } from "../types";
 
 
