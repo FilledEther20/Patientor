@@ -1,11 +1,14 @@
 import express, { Request, Response } from 'express';
-import diagnosesData from '../data/diagnoses';
-import patientData from '../data/patient';
-import { Diagnoses } from '../types';
+import patientorService from '../services/services';
 const router = express.Router();
 
-router.get('/', (_req: Request, res: Response) => {
-	res.send(diagnosesData);
+router.get('/diagnoses', (_req: Request, res: Response) => {
+	res.send(patientorService.getDiagnoses());
+});
+
+router.get('/patient', (_req: Request, res: Response) => {
+	const data = patientorService.getSafePatientData();
+	res.send(data);
 });
 
 export default router;
