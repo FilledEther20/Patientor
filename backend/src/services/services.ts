@@ -1,18 +1,22 @@
-import patientData from "../data/patient";
-import diagnosesData from "../data/diagnoses";
-import { Diagnoses, Patient } from "../types";
+import diagnosesData from '../data/diagnoses';
+import patientData from '../data/patient';
+import { SafePatientData,Diagnoses } from '../types';
 
-
-const getDiagnosesData=():Diagnoses[]=>{
+const getDiagnoses=():Diagnoses[]=>{
     return diagnosesData
 }
 
-const getPatientData=():Patient[]=>{
-    return patientData
-}
+const getSafePatientData = (): SafePatientData[] => {
+	return patientData.map(({ id, name, dateOfBirth, gender, occupation }) => ({
+		id,
+		name,
+		dateOfBirth,
+		gender,
+		occupation,
+	}));
+};
 
-
-export default{
-    getDiagnosesData,
-    getPatientData,
-}
+export default {
+    getDiagnoses,
+	getSafePatientData,
+};
