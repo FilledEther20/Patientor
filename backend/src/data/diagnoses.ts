@@ -1,5 +1,4 @@
-import { Diagnoses } from "../types";
-
+import { Diagnoses } from "../models/diagnose_model";
 const diagnosesData:Diagnoses[] = [
 	{
 		code: 'M24.2',

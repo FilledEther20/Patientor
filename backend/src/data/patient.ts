@@ -1,4 +1,4 @@
-import { Patient } from "../types";
+import { Patient } from "../models/patient_model";
 const patientData:Patient[] = [
 	{
 		id: 'd2773336-f723-11e9-8f0b-362b9e155667',
