@@ -7,7 +7,7 @@ export interface Patient{
     occupation:string,
 }
 
-export type SafePatientData=Omit<Patient,'ssn'>;
+export type SafePatientData=Omit<Patient,'id'>;
 
 export enum Gender{
     Male='male',
