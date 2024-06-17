@@ -1,6 +1,7 @@
 import diagnosesData from '../data/diagnoses';
 import patientData from '../data/patient';
-import { SafePatientData,Diagnoses } from '../types';
+import { SafePatientData } from '../models/patient_model';
+import { Diagnoses } from '../models/diagnose_model';
 
 const getDiagnoses=():Diagnoses[]=>{
     return diagnosesData
@@ -16,7 +17,11 @@ const getSafePatientData = (): SafePatientData[] => {
 	}));
 };
 
+const getPatientbyId=(id:string):SafePatientData|undefined=>{
+	return patientData.find((patient)=>patient.id==id);
+}
 export default {
     getDiagnoses,
 	getSafePatientData,
+	getPatientbyId,
 };
