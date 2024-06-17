@@ -8,8 +8,8 @@ const getDiagnoses=():Diagnoses[]=>{
 }
 
 const getSafePatientData = (): SafePatientData[] => {
-	return patientData.map(({ id, name, dateOfBirth, gender, occupation }) => ({
-		id,
+	return patientData.map(({ ssn, name, dateOfBirth, gender, occupation }) => ({
+		ssn,
 		name,
 		dateOfBirth,
 		gender,
@@ -20,6 +20,7 @@ const getSafePatientData = (): SafePatientData[] => {
 const getPatientbyId=(id:string):SafePatientData|undefined=>{
 	return patientData.find((patient)=>patient.id==id);
 }
+
 export default {
     getDiagnoses,
 	getSafePatientData,
