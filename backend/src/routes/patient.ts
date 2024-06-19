@@ -8,9 +8,15 @@ patientRouter.get('/', (_req: Request, res: Response) => {
 	res.send(data);
 });
 
-patientRouter.get('/:patientId',(req:Request,res:Response)=>{
-    res.send(patientorService.getPatientbyId(req.params.patientId));
-})
+patientRouter.get('/:patientId', (req: Request, res: Response) => {
+    const patientId = req.params.patientId;
+    const patient = patientorService.getPatientbyId(patientId);
+    if (patient) {
+        res.send(patient);
+    } else {
+        res.status(404).send('Patient not found');
+    }
+});
 
 patientRouter.post('/', (req:Request, res:Response) => {
     try {
