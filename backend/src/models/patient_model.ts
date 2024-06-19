@@ -1,3 +1,5 @@
+export interface Entry{
+}
 export interface Patient{
     id:string,
     name:string,
@@ -5,9 +7,10 @@ export interface Patient{
     ssn:string,
     gender:'male'|'female'|'other',
     occupation:string,
+    entries:Entry[]
 }
 
-export type SafePatientData=Omit<Patient,'id'>;
+export type SafePatientData=Omit<Patient,'id' | 'entries'>;
 
 export enum Gender{
     Male='male',

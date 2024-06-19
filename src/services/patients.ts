@@ -11,6 +11,20 @@ const getAll = async () => {
   return data;
 };
 
+const getPatientById=async(id:string)=>{
+  console.log("Get patient by id",id)
+  const {data}=await axios.get<Patient>(
+    `${apiBaseUrl}/patient/${id}`
+  )
+  if(data){
+    console.log(data);
+  }else{
+    console.log(`${apiBaseUrl}/patient/${id}`)
+    console.log("Error in fetching data")
+  }
+  return data;
+}
+
 const create = async (object: PatientFormValues) => {
   const { data } = await axios.post<Patient>(
     `${apiBaseUrl}/patient`,
@@ -21,6 +35,6 @@ const create = async (object: PatientFormValues) => {
 };
 
 export default {
-  getAll, create
+  getAll, create,getPatientById
 };
 
