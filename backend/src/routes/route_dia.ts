@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
-import patientorService from '../services/services';
+import patientorService from '../services/patientServices';
 const router = express.Router();
 
-router.get('/diagnoses', (_req: Request, res: Response) => {
+router.get('/', (_req: Request, res: Response) => {
 	res.send(patientorService.getDiagnoses());
 });
 
