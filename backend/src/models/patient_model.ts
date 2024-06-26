@@ -10,7 +10,8 @@ export interface Patient{
     entries:Entry[]
 }
 
-export type SafePatientData=Omit<Patient,'id' | 'entries'>;
+export type SafePatientData=Omit<Patient,'ssn' | 'entries'>;
+export type PostPatientData=Omit<Patient ,'id' |'entries'>;
 
 export enum Gender{
     Male='male',
