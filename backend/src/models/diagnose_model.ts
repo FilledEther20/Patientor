@@ -7,9 +7,9 @@ export interface Diagnoses{
 interface BaseEntry{
     id:string,
     date:string,
-    type:string,
+    description:string,
     specialist:string,
-    diagnosisCodes:Array<Diagnoses['code']>,
+    diagnosisCodes?:Array<Diagnoses['code']>,
 }
 export enum HealthCheckRating{
     "Healthy"=0,
@@ -21,3 +21,34 @@ interface HealthCheckEntry extends BaseEntry{
     type:"HealthCheck";
     healthCheckRating:HealthCheckRating;
 }
+
+export type Discharge={
+    date:string,
+    criteria:string,
+}
+
+interface HospitalEntry extends BaseEntry{
+    type:"Hospital";
+    discharge:Discharge;
+}
+
+export type SickLeave={
+    startDate:string,
+    endDate:string,
+}
+
+interface OccupationalHealthcareEntry extends BaseEntry{
+    type:"Occupational Healthcare",
+    employerName:string,
+    sickLeave?:SickLeave
+}
+
+
+
+
+
+
+
+
+
+export type Entry=HealthCheckRating|HospitalEntry|OccupationalHealthcareEntry
