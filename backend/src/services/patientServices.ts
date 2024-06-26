@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import diagnosesData from '../data/diagnoses';
 import patientData from '../data/patient';
-import { SafePatientData, Patient } from '../models/patient_model';
+import { SafePatientData, Patient, PostPatientData } from '../models/patient_model';
 import { Diagnoses } from '../models/diagnose_model';
 
 const getDiagnoses = (): Diagnoses[] => {
@@ -9,8 +9,8 @@ const getDiagnoses = (): Diagnoses[] => {
 };
 
 const getSafePatientData = (): SafePatientData[] => {
-    return patientData.map(({ ssn, name, dateOfBirth, gender, occupation }) => ({
-        ssn,
+    return patientData.map(({ id, name, dateOfBirth, gender, occupation}) => ({
+        id,
         name,
         dateOfBirth,
         gender,
@@ -23,7 +23,7 @@ const getPatientbyId = (id: string): SafePatientData | undefined => {
     return patient;
 };
 
-const addPatient = (entry: SafePatientData): Patient => {
+const addPatient = (entry: PostPatientData): Patient => {
     const newPatientEntry: Patient = {
         id: uuidv4(),
 		entries:[],
