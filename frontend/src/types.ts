@@ -1,3 +1,4 @@
+import {Entry} from '../../backend/src/models/diagnose_model'
 export interface Diagnosis {
   code: string;
   name: string;
@@ -8,8 +9,6 @@ export enum Gender {
   Male = "male",
   Female = "female",
   Other = "other"
-}
-export interface Entry{
 }
 export interface Patient{
   id:string,
