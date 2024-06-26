@@ -1,4 +1,4 @@
-
+import { Entry } from "./diagnose_model";
 export interface Patient{
     id:string,
     name:string,
