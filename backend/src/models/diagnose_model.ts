@@ -42,13 +42,4 @@ interface OccupationalHealthcareEntry extends BaseEntry{
     employerName:string,
     sickLeave?:SickLeave
 }
-
-
-
-
-
-
-
-
-
-export type Entry=HealthCheckRating|HospitalEntry|OccupationalHealthcareEntry
+export type Entry=HealthCheckEntry|HospitalEntry|OccupationalHealthcareEntry
