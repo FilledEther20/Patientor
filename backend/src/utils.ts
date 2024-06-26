@@ -1,4 +1,4 @@
-import { SafePatientData, Gender } from './models/patient_model';
+import { Gender, PostPatientData } from './models/patient_model';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -51,7 +51,7 @@ const parseGender = (gender: any): Gender => {
 	return gender;
 };
 
-const toNewPatientEntry = (object: any): SafePatientData => {
+const toNewPatientEntry = (object: any): PostPatientData => {
 	return {
 		name: parseName(object.name),
 		dateOfBirth: parseDate(object.dateOfBirth),
